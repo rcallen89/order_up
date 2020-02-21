@@ -30,5 +30,13 @@ RSpec.describe 'Chef Show Page', type: :feature do
       expect(page).to have_content("Noodles", count: 1)
       expect(page).to have_content("Red Sauce")
     end
+
+    it 'should show the three most popular ingredients used' do
+      visit "/chefs/#{@chef.id}"
+
+      within "#popularity-block" do
+        expect(page).to have_content("Noodles\nCheese\nRed Sauce")
+      end
+    end
   end
 end

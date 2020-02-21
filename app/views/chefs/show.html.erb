@@ -1,3 +1,9 @@
 <h2>Name: <%= @chef.name %></h2>
 
 <%= link_to 'Chef Ingredients', "/chefs/#{@chef.id}/ingredients" %>
+
+<section id="popularity-block">
+  <% @chef.three_most_pop.each do |ingredient| %>
+    <p><%= ingredient %></p>
+  <% end %>
+</section>
