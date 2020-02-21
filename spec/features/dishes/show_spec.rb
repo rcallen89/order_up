@@ -6,6 +6,8 @@ RSpec.describe 'Dish Show Page', type: :feature do
     @ingredient_1 = Ingredient.create!(name: "Cheese", calories: 100)
     @ingredient_2 = Ingredient.create!(name: "Noodles", calories: 200)
     @dish_1 = @chef.dishes.create!(name: "Noodles and Cheese", description: "It's not Mac and Cheese")
+      @dishes_ingredients1 = DishesIngredient.create!(dish: @dish_1, ingredient: @ingredient_1)
+    @dishes_ingredients1 = DishesIngredient.create!(dish: @dish_1, ingredient: @ingredient_2)
   end
   context 'as a visitor' do
     it 'shows the name of the chef and a list of ingredients' do
